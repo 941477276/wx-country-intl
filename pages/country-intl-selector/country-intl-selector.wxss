@@ -1,0 +1,72 @@
+/* pages/country-intl-selector.wxss */
+@import "./country-list.wxss";
+
+.wx-country-intl-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  transform: translateX(0);
+  background-color: #fff;
+  transition: transform .3s;
+}
+.wx-country-intl-modal.hidden{
+  transform: translateX(100%);
+}
+.wx-country-intl-modal view,
+.wx-country-intl-modal button{
+  box-sizing: border-box;
+}
+
+.wx-country-intl-modal .country-modal-content{
+  position: relative;
+  height: 100%;
+  padding: 80rpx 0 0 0;
+}
+.wx-country-intl-modal .country-modal-search-box{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0 30rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+.wx-country-intl-modal .modal-search-wrap{
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.wx-country-intl-modal .country-modal-search-input{
+  display: table-cell;
+  float: left;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: none;
+  outline: none;
+  margin: 0;
+  font-size: 28rpx;
+  appearance: none; /* 去除iPhone输入框阴影 */
+}
+.wx-country-intl-modal .country-modal-search-cancel{
+  display: table-cell;
+  vertical-align: middle;
+  width: 1%;
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+  border-radius: 0;
+  white-space: nowrap;
+  font-size: 28rpx;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: transparent;
+}
+.wx-country-intl-modal .vue-country-list-wrap{
+  position: static;
+  height: 100%;
+  max-height: none;
+  border-bottom: none;
+  border-radius: 0;
+}

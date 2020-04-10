@@ -1,0 +1,31 @@
+<!--pages/country-intl-selector.wxml-->
+<view class="wx-country-intl-modal {{visible ? '' : 'hidden'}}" catchtouchmove='true'>
+  <view class="country-modal-content">
+    <view class="country-modal-search-box" id="searchBox">
+      <view class="modal-search-wrap">
+        <input class="country-modal-search-input" model:value="{{searchText}}" placeholder="输入国家名称、区号搜索"></input>
+        <button class="country-modal-search-cancel" bindtap="_handelCancel">取消</button>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" scroll-x="true" class="vue-country-list-wrap" style="height:{{countryListHeight}}px;">
+      <view class="vue-country-list" catchtap="_countryItemClick" wx:if="{{listVisible}}">
+        <view
+            class="vue-country-item {{item.iso2 === selected.iso2 ? 'selected' : ''}}"
+            wx:for="{{countryList}}"
+            wx:for-item="item"
+            wx:for-index="index"
+            wx:key="iso2"
+            data-index="{{index}}"
+            data-iso="{{item.iso2}}">
+          <view data-index="{{index}}" data-iso="{{item.iso2}}" class="iti-flag {{item.iso2}}"></view>
+          <view data-index="{{index}}" data-iso="{{item.iso2}}" class="vue-country-name">{{item.name}}</view>
+          <view data-index="{{index}}" data-iso="{{item.iso2}}" class="vue-country-areaCode" hidden="{{!showAreaCode}}">+{{item.dialCode}}</view>
+          <view data-index="{{index}}" data-iso="{{item.iso2}}" class="selected-text" hidden="{{!showSelectedText}}">{{selectedText}}</view>
+        </view>
+        <view class="vue-country-no-data" hidden="{{countryList.length !== 0}}">
+          <slot name="vueCountryNoData">{{noDataText}}</slot>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

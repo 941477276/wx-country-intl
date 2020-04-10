@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:for="{{5}}" wx:key="item" wx:for-item="item">我是第 {{item}} 个元素</view>
+  <country-intl-selector bindonchange="onChange" model:value="{{countryCode}}" model:visible="{{visible}}"></country-intl-selector>
+  <button style="margin: 20px 0;" type="primary" bind:tap="showCountryIntlSelector">选择手机区号</button>
+  <view style="font-size: 18px;font-weight:600;">您选择的手机区号为：{{countryCode}}</view>
+  <navigator style="display: inline-block;margin: 10px 0;color:#f60;" url="/pages/detail/detail">详情页</navigator>
+
+<country-intl-selector bindonchange="onChange2" type="country" model:value="{{countryCode2}}" model:visible="{{visible2}}"></country-intl-selector>
+  <button style="margin: 20px 0;" type="primary" bind:tap="showCountryIntlSelector2">选择国籍</button>
+  <view style="margin-bottom: 10px;font-size: 18px;font-weight:600;">
+    <view>您选择的国籍代码为：{{countryCode2}}</view>
+    <view>您选择的国籍名称为：{{selected.name}}</view>
+  </view>
+
+  <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="item" wx:for-item="item">我是第 {{item}} 个元素</view>
+  <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="item" wx:for-item="item">我是第 {{item}} 个元素</view>
+</view>

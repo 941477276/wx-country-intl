@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "country-intl-selector": "../country-intl-selector/country-intl-selector"
+  }
+}
